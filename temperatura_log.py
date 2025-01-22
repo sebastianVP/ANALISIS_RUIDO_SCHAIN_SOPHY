@@ -2,6 +2,11 @@ import psutil
 import time
 import os
 from datetime import datetime
+###
+# COMANDO EN CRONTAB:
+# * * * * * cd /home/soporte/Documents/REVISION_SCHAIN_SOPHY/ANALISIS_RUIDO_SCHAIN_SOPHY && ./temperatura.sh
+###
+
 
 def obtener_temperatura():
     """
