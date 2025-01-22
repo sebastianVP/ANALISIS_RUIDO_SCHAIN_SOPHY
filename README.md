@@ -32,6 +32,10 @@ En nuestro caso le hemos llamado: conda create --name SCHAIN_SOPHY_2025 python=3
 
 * pip install cartopy
 
+* pip install mako
+
+* pip install digital_rf
+
 * cd schain/schainpy
 
 Aqui ya estamos instalando SIGNAL CHAIN, con el siguiente comando, lo que esta pendiente y quizas se pudo instalar antes es la libreria digitalrf
@@ -39,12 +43,12 @@ Aqui ya estamos instalando SIGNAL CHAIN, con el siguiente comando, lo que esta p
 * pip install -e ../
 
 
-Si hemos llegado hasta aqui sin problemas podemos proceder a instalar digitalrf
+NOTA: Si qusieramos construir la libreria digitalrf tenemos que tener instalado cmake version 3.20
+
+**CONTINUAMOS**
+---
 
 * En la carpeta inicial /home/soporte/Documents/REVISION_SCHAIN_SOPHY
-
-Luego clonamos el repositorio de la libreria digitalrf
-
 
 
 Los datos de radar se encuentran en la siguiente ruta:
@@ -52,7 +56,7 @@ Los datos de radar se encuentran en la siguiente ruta:
 Aqui encontraremos los archivos rawdata, position y experiment.json
 
 
-Tratamos de ejectura y nos damos cuenta que requerimos cartopy:
+Tratamos de ejectura y nos damos cuenta de un error con el siguiente comando:
 * python sophy_proc_drone.py  HYO@2025-01-06T19-56-05 --parameters Z
 
 * En la  ruta  siguiente esta instalado signal chain y la carpeta de script de prueba de  la version v3.0-WR
@@ -68,7 +72,7 @@ Tratamos de ejectura y nos damos cuenta que requerimos cartopy:
 
 * python sophy_proc_drone.py  HYO@2025-01-06T19-56-05 --parameters Z
 
-Aqui nos indica un error que debemos modificar el archivo experiment.json, lo que falta modificar es el datadir
+Aqui nos indica un error que debemos modificar el archivo **experiment.json**, lo que falta modificar es el datadir
 
 
    "usrp_rx": {
@@ -89,7 +93,6 @@ Cambiamos el datadir por el actual
 "datadir": "/home/soporte/Documents/REVISION_SCHAIN_SOPHY/HYO@2025-01-06T19-56-05/rawdata"
 
 
-Realizado el cambio podemos volver a ejecutar el comando:
+Aqui deberiamos probar finalmente toda la instalacion.
 
-* python sophy_proc_drone.py  HYO@2025-01-06T19-56-05 --parameters Z
-
+* python sophy_proc_drone.py  HYO@2025-01-06T19-56-05 --parameters Z --plot --save --rmDC --label REVISION --range 60
