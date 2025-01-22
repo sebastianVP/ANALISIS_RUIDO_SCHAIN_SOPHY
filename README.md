@@ -38,7 +38,7 @@ En nuestro caso le hemos llamado: conda create --name SCHAIN_SOPHY_2025 python=3
 
 * cd schain/schainpy
 
-Aqui ya estamos instalando SIGNAL CHAIN, con el siguiente comando, lo que esta pendiente y quizas se pudo instalar antes es la libreria digitalrf
+Aqui VAMOS a instalar SIGNAL CHAIN, con el siguiente comando, lo que esta pendiente y quizas se pudo instalar antes es la libreria digitalrf
 
 * pip install -e ../
 
